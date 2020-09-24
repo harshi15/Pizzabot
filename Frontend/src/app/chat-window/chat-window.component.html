@@ -1,0 +1,42 @@
+        <div class="main" (keyup.enter)="sendMessage();">
+            <div class="chatbox"  style ="width:500px;height:700px; margin: 0 auto; ">
+            <div class="chat-box-header">
+               🍕 ∏-ZZA CORNER
+                <span class="chat-box-toggle" (click)="logout();"><i class="material-icons">Logout</i></span>
+            </div>
+            <div class="chatbody" #msgContainer style="height: 550px; overflow: auto;"> 
+                <div class="bubbleWrapper" *ngFor="let message of messages" >
+                    <div class="inlineContainer" [ngClass]="{ 
+                    'own': message.author === 'user' }">
+                        <img class="inlineIcon" [src] ="message.author === 'bot' ?  'assets/boticon.jpg' : 'assets/user.png' ">
+                        <div [ngClass]="{ 'otherBubble other': message.author === 'bot',
+                        'ownBubble own': message.author === 'user' }">
+                        <div *ngIf="message.content === 'loading' ;else other_content">
+                            <div class="spinner">
+                                <div class="bounce1"></div>
+                                <div class="bounce2"></div>
+                                <div class="bounce3"></div>
+                              </div>
+                        </div>
+                        <ng-template #other_content>{{message.content}}</ng-template>      
+                        </div>
+                    </div> 
+                </div>
+            </div>
+            <form (ngSubmit)="sendMessage();">
+            <ng2-completer [inputClass]="'ng2'" [datasource]="pizzaData" [minSearchLength]="5" name="message" id="message" (ngSubmit)="sendMessage();" [(ngModel)]="message"></ng2-completer>
+            </form>
+            <div class="enter-message" style="bottom: 55px;position: fixed;">
+               
+                <!-- <input type="text" placeholder="Enter your message.." name="message" id="message" (keyup.enter)="sendMessage();" [(ngModel)]="message" /> -->
+                <a (click)="sendMessage();" class="send">Send</a>
+            </div>
+                    
+
+
+
+            </div>
+        </div>
+
+
+

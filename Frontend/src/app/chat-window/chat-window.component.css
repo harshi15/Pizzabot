@@ -1,0 +1,164 @@
+* {
+  font-family: 'Avenir';
+}
+.bubbleWrapper {
+	padding: 10px 10px;
+	display: flex;
+	justify-content: flex-end;
+	flex-direction: column;
+	align-self: flex-end;
+  color: #fff;
+}
+.inlineContainer {
+  display: inline-flex;
+}
+.inlineContainer.own {
+  flex-direction: row-reverse;
+}
+.inlineIcon {
+  width:25px;
+  object-fit: contain;
+}
+.ownBubble {
+	min-width: 60px;
+	max-width: 700px;
+	padding: 14px 18px;
+  margin: 6px 8px;
+	background-color: rgb(113, 22, 76);
+	border-radius: 16px 16px 0 16px;
+	border: 1px solid #443f56;
+ 
+}
+.otherBubble {
+	min-width: 60px;
+	max-width: 700px;
+	padding: 14px 18px;
+  margin: 6px 8px;
+	background-color: rgb(237, 222, 222);
+	border-radius: 16px 16px 16px 0;
+  border: 1px solid #54788e;
+  color: black;
+  
+}
+.own {
+	align-self: flex-end;
+}
+.other {
+	align-self: flex-start;
+}
+span.own,
+span.other{
+  font-size: 14px;
+  color: grey;
+}
+
+.enter-message{
+  padding:13px 0px;
+  margin-left: 57px;
+}
+ :host >>> .completer-input{
+  border:none;
+  padding:10px 12px;
+  background:#d3d3d3;
+  width:296px;
+  border-radius:2px;
+  bottom: 59px;position: fixed;
+  margin-left: 43px;
+  z-index: 11;
+}
+:host >>> .completer-dropdown {
+  margin-top: 49px !important;
+  margin-left: 39px !important;
+  /* width: 100% !important; */
+}
+.enter-message a.send{
+  padding:10px 15px;
+  padding-top: 8px;
+  background:#6294c2;
+  border-radius:2px;
+  margin-left: 293px;
+  /* float:right; */
+}
+
+.main {
+  background-image: url('../../assets/chatbg.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+
+.chatbox {
+  background-image: linear-gradient(-20deg, #fc6076 0%, #ff9a44 100%);
+}
+
+.chat-box-toggle {
+  float:right;
+  margin-right:15px;
+  cursor:pointer;
+}
+.chat-box-header {
+  background: #5A5EB9;
+  height:40px;
+  border-top-left-radius:5px;
+  border-top-right-radius:5px; 
+  color:white;
+  text-align:center;
+  font-size:20px;
+  padding-top:17px;
+}
+
+.chatbody::-webkit-scrollbar {
+  width: 10px;
+  }
+.chatbody::-webkit-scrollbar-track { 
+background : #555999;
+border-radius: 10px;
+}
+.chatbody::-webkit-scrollbar-thumb { 
+background : rgba(255,255,255,0.5);
+border-radius: 10px;
+box-shadow:  0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+
+.spinner {
+  /* margin: 100px auto 0; */
+  width: 70px;
+  text-align: center;
+}
+
+.spinner > div {
+  width: 13px;
+  height: 13px;
+  background-color: #333;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+
+@-webkit-keyframes sk-bouncedelay {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { 
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 40% { 
+    -webkit-transform: scale(1.0);
+    transform: scale(1.0);
+  }
+}
